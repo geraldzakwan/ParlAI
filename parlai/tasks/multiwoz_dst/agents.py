@@ -47,10 +47,10 @@ class MultiWozDstTeacher(DialogTeacher):
             # dialogue_id is the filename excluding .json extension
             dialogue_id = dialogue['dialogue_idx'][:len(dialogue['dialogue_idx'])-4]
 
-            for cnt, turn in enumerate(dialogue['dialogue']):
+            for turn in dialogue['dialogue']:
                 new_episode = False
 
-                if cnt == 0:
+                if turn['turn_idx'] == 0:
                     new_episode = True
 
                 if len(turn['turn_label']) == 0:
