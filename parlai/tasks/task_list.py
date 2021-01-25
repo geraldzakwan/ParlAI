@@ -1361,4 +1361,15 @@ task_list = [
         "description": "Task for detect whether the last utterance contradicts previous dialogue history.",
         "links": {"arXiv": "https://arxiv.org/abs/2012.13391"},
     },
+    {
+        "id": "MultiWOZDST",
+        "display_name": "MultiWOZ 2.2 DST",
+        "task": "multiwoz_dst",
+        "tags": ["All", "Goal"],
+        "description": (
+            "A fully labeled collection of human-written conversations spanning"
+            "over multiple domains and topics."
+        ),
+        "links": {"website": "http://dialogue.mi.eng.cam.ac.uk/index.php/corpus/"},
+    },
 ]

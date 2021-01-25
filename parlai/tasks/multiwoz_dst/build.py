@@ -9,7 +9,7 @@ import parlai.core.build_data as build_data
 import os
 from parlai.core.build_data import DownloadableFile
 
-# schema.json, dialog_acts.json, 13 dialogue files for train, 2 for dev and test
+# schema.json, dialog_acts.json, 17 dialogue files for train, 2 for dev and test
 RESOURCES = [
     DownloadableFile(
         'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/schema.json',
