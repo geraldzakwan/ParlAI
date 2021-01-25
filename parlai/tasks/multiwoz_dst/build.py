@@ -152,7 +152,7 @@ RESOURCES = [
 
 
 def build(opt):
-    dpath = os.path.join(opt['datapath'], 'multiwoz_v22')
+    dpath = os.path.join(opt['datapath'], 'multiwoz_dst', 'multiwoz_v22')
     version = '1.0'
 
     if not build_data.built(dpath, version_string=version):

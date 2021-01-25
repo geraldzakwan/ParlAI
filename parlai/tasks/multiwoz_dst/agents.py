@@ -21,7 +21,7 @@ class MultiWozDstTeacher(DialogTeacher):
         self.datatype = opt['datatype']
         build(opt)
 
-        self.jsons_path = os.path.join(opt['datapath'], 'multiwoz_dst', 'MULTIWOZ2.2')
+        self.jsons_path = os.path.join(opt['datapath'], 'multiwoz_dst', 'multiwoz_v22')
 
         self.schema_path = os.path.join(self.jsons_path, 'schema.json')
         self.dialog_acts_path = os.path.join(self.jsons_path, 'dialog_acts.json')
@@ -34,8 +34,27 @@ class MultiWozDstTeacher(DialogTeacher):
         self.id = 'multiwoz_dst'
         super().__init__(opt, shared)
 
-    def _setup_data(self, schema_path, dialog_acts_path, train_path, dev_path, test_path):
-        pass
+    def setup_data(self, path):
+        """
+        Load json data of conversations.
+        """
+        # Note that path is the value provided by opt['datafile']
+        print('Loading: ' + path)
+
+        with PathManager.open(path) as data_file:
+            self.dialogues = json.load(data_file) # Load a list of dialogues
+
+        for dialogue in self.dialogues: # dialogue is a dict
+            for idx, turn in enumerate(dialogue['turns']):
+                turn_ID = turn['turn_id']
+                speaker = turn['speaker']
+                utterance = turn['utterance']
+
+                if idx == len(dialogue['turns']) - 1:
+                    yield {"turn_id": turn_ID, "speaker": speaker, "utterance": utterance}, True
+                else:
+                    yield {"turn_id": turn_ID, "speaker": speaker, "utterance": utterance}, False
+
 
 class DefaultTeacher(MultiWozDstTeacher):
     pass
