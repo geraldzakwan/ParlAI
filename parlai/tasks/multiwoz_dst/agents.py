@@ -48,24 +48,35 @@ class MultiWozDstTeacher(DialogTeacher):
             dialogue_id = dialogue['dialogue_idx'][:len(dialogue['dialogue_idx'])-4]
 
             for cnt, turn in enumerate(dialogue['dialogue']):
-                episode_done = False
+                new_episode = False
 
-                if cnt == len(dialogue['dialogue']) - 1:
-                    episode_done = True
+                if cnt == 0:
+                    new_episode = True
 
-                yield {
-                    'text': turn['system_transcript'] + '\n' + turn['transcript'],
-                    'labels': 'DUMMY', # a list
-                    # 'labels': turn['turn_label'], # a list
-                    'id': dialogue_id,
-                    'system_transcript': turn['system_transcript'],
-                    'transcript': turn['transcript'],
-                    'turn_idx': turn['turn_idx'],
-                    'belief_state': turn['belief_state'],
-                    'turn_label': turn['turn_label'],
-                    'system_acts': turn['system_acts'],
-                    'domain': turn['domain'],
-                }, episode_done
+                if len(turn['turn_label']) == 0:
+                    yield {
+                        'text': turn['transcript'],
+                        'labels': ['default:none'],
+                    }, new_episode
+                else:
+                    yield {
+                        'text': turn['transcript'],
+                        'labels': [':'.join(turn_label) for turn_label in turn['turn_label']],
+                    }, new_episode
+
+                # yield {
+                #     'text': turn['system_transcript'] + '\n' + turn['transcript'],
+                #     'labels': 'DUMMY', # a list
+                #     # 'labels': turn['turn_label'], # a list
+                #     'id': dialogue_id,
+                #     'system_transcript': turn['system_transcript'],
+                #     'transcript': turn['transcript'],
+                #     'turn_idx': turn['turn_idx'],
+                #     'belief_state': turn['belief_state'],
+                #     'turn_label': turn['turn_label'],
+                #     'system_acts': turn['system_acts'],
+                #     'domain': turn['domain'],
+                # }, new_episode
 
 
 class DefaultTeacher(MultiWozDstTeacher):
