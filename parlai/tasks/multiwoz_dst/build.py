@@ -11,148 +11,28 @@ from parlai.core.build_data import DownloadableFile
 
 RESOURCES = [
     DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/schema.json',
-        'schema.json',
-        'ae9e2390f38fb967af64623c2f4f7e0c636fb377ad523b582a03161d3ddbdf68',
+        'https://github.com/geraldzakwan/conv_dataset/blob/main/trade-dst/train_dials.json?raw=true',
+        'train_dials.json',
+        'a61cc5e618b2c0708e9f5ec2bf63676a84b0b0ed2f1d893b6d13ed4d11262ce8',
         zipped=False,
     ),
     DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/dialog_acts.json',
-        'dialog_acts.json',
-        '1f51ac200dcf8154aeee37e3a9fea3ee9d6fa5b111208de55ded74d39d82bafa',
+        'https://github.com/geraldzakwan/conv_dataset/blob/main/trade-dst/dev_dials.json?raw=true',
+        'dev_dials.json',
+        '28bb7fa64e62b385df5828bdaecdcd2a62b4f3f11385a41d2e75f2afa43274b8',
         zipped=False,
     ),
     DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_001.json',
-        'train/dialogues_001.json',
-        '895a8109bf01fa5ecf15ccdbd2dfe1628bd923f6b61dcd2e26b10ee5076a1596',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_002.json',
-        'train/dialogues_002.json',
-        '2f3ea771d4e01cb2780357738cff7f7496b87d34c221cc240df74501312438d3',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_003.json',
-        'train/dialogues_003.json',
-        'da24961d28486be2d8462ee4d86a809db819d588ba90ae1a783383d95eb85daa',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_004.json',
-        'train/dialogues_004.json',
-        '30c1172db1071c853b16215d1946de908d68d2b6ff8da7801de307000a179106',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_005.json',
-        'train/dialogues_005.json',
-        'eaf58716df5de99524b3e0e7edf477b74749512788a6a51f53f2bdd76768d39a',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_006.json',
-        'train/dialogues_006.json',
-        '8e75fd543b1964bc5e7118085d977f479c98fcdf6d606b971f67a45fb1745c83',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_007.json',
-        'train/dialogues_007.json',
-        '02323f8298439d713c6d7d226f4bd7ec246ec993ee11911b54f98cb8a598f206',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_008.json',
-        'train/dialogues_008.json',
-        '1129fbed480352ae304f0ae5b4915c194e9619c43f1577ccb0d450e10d24ea98',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_009.json',
-        'train/dialogues_009.json',
-        '87d9e43b1ba51a4a4688703da79d3a09b14d8013570545da24c597daa18e2f45',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_010.json',
-        'train/dialogues_010.json',
-        'e7ad0d5da2909b08197295e45fe4695b9dc2f67d458374b2aab8db5094e97b26',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_011.json',
-        'train/dialogues_011.json',
-        '82e2d2900a037b866a01d05974734dd419e89b329fe29ef93b35eea96d27feb8',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_012.json',
-        'train/dialogues_012.json',
-        'b6bf292325db67682dd7b6fafbf1051cc2262e92f7c37cab213e975888594bb2',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_013.json',
-        'train/dialogues_013.json',
-        'c33fe4b3952c016e1e1645f472a7097f93dfb476a19940fd9386865ef9adf685',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_014.json',
-        'train/dialogues_014.json',
-        'ce33dbbf93a40d0dcc671a9d6a2ed1f987914f5b5f05f6df493a5b342efda954',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_015.json',
-        'train/dialogues_015.json',
-        'd895c0439bc2ad89ef1689896e3be630eadebc33dae77b42a426fd16a271718e',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_016.json',
-        'train/dialogues_016.json',
-        '3e6bc0bca4262022ccbce0d5ce3150e536e7d21aeb9fbdef9e83cced4dfd124b',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/train/dialogues_017.json',
-        'train/dialogues_017.json',
-        'b6ab2cd9b6e8983364526845b7cbec1749338209bf7ac2313c25e1e2226ebab5',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/dev/dialogues_001.json',
-        'dev/dialogues_001.json',
-        'e7ddb563e4da5766ea820cc826dead77e7ca219c19b761e218d62d9c999a252e',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/dev/dialogues_002.json',
-        'dev/dialogues_002.json',
-        'ede6a2c17fd6c5846214b8cabc1ef8f7cc8be01cfbacaa162bcafec9e87724e9',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/test/dialogues_001.json',
-        'test/dialogues_001.json',
-        '8877ab882d74db920abdee90028b1c30818d2c6932808c3e28e5cf32a6880000',
-        zipped=False,
-    ),
-    DownloadableFile(
-        'https://raw.githubusercontent.com/budzianowski/multiwoz/master/data/MultiWOZ_2.2/test/dialogues_002.json',
-        'test/dialogues_002.json',
-        '89af95d8f596a448e733d59b31be78f1dd1632eddd99d5cb298a3fcb1ac9d185',
+        'https://github.com/geraldzakwan/conv_dataset/blob/main/trade-dst/test_dials.json?raw=true',
+        'test_dials.json',
+        '708bd57234242e562cd238f6e95df282ca30e721d8e2e6e1f03e4c10d0dff249',
         zipped=False,
     ),
 ]
 
 
 def build(opt):
-    dpath = os.path.join(opt['datapath'], 'multiwoz_dst', 'multiwoz_v22')
+    dpath = os.path.join(opt['datapath'], 'multiwoz_dst')
     version = '1.0'
 
     if not build_data.built(dpath, version_string=version):
@@ -160,11 +40,6 @@ def build(opt):
         if build_data.built(dpath):
             build_data.remove_dir(dpath)
         build_data.make_dir(dpath)
-
-        # Train, dev and test dir
-        build_data.make_dir(os.path.join(dpath, 'train'))
-        build_data.make_dir(os.path.join(dpath, 'dev'))
-        build_data.make_dir(os.path.join(dpath, 'test'))
 
         # Download the data.
         for downloadable_file in RESOURCES:
