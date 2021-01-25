@@ -21,16 +21,15 @@ class MultiWozDstTeacher(DialogTeacher):
         self.datatype = opt['datatype']
         build(opt)
 
-        self.jsons_path = os.path.join(opt['datapath'], 'multiwoz_dst', 'multiwoz_v22')
+        suffix = 'train'
+        if opt['datatype'].startswith('dev'):
+            suffix = 'dev'
+        elif opt['datatype'].startswith('test'):
+            suffix = 'test'
 
-        self.schema_path = os.path.join(self.jsons_path, 'schema.json')
-        self.dialog_acts_path = os.path.join(self.jsons_path, 'dialog_acts.json')
+        self.jsons_path = os.path.join(opt['datapath'], 'multiwoz_dst')
+        opt['datafile'] = os.path.join(self.jsons_path, '{}_dials.json'.format(suffix))
 
-        self.train_path = os.path.join(self.jsons_path, 'train')
-        self.dev_path = os.path.join(self.jsons_path, 'dev')
-        self.test_path = os.path.join(self.jsons_path, 'test')
-
-        opt['datafile'] = os.path.join(self.train_path, 'dialogues_001.json')
         self.id = 'multiwoz_dst'
         super().__init__(opt, shared)
 
@@ -45,15 +44,28 @@ class MultiWozDstTeacher(DialogTeacher):
             self.dialogues = json.load(data_file) # Load a list of dialogues
 
         for dialogue in self.dialogues: # dialogue is a dict
-            for idx, turn in enumerate(dialogue['turns']):
-                turn_ID = turn['turn_id']
-                speaker = turn['speaker']
-                utterance = turn['utterance']
+            # dialogue_id is the filename excluding .json extension
+            dialogue_id = dialogue['dialogue_idx'][:len(dialogue['dialogue_idx'])-4]
 
-                if idx == len(dialogue['turns']) - 1:
-                    yield {"turn_id": turn_ID, "speaker": speaker, "utterance": utterance}, True
-                else:
-                    yield {"turn_id": turn_ID, "speaker": speaker, "utterance": utterance}, False
+            for cnt, turn in enumerate(dialogue['dialogue']):
+                episode_done = False
+
+                if cnt == len(dialogue['dialogue']) - 1:
+                    episode_done = True
+
+                yield {
+                    'text': turn['system_transcript'] + '\n' + turn['transcript'],
+                    'labels': 'DUMMY', # a list
+                    # 'labels': turn['turn_label'], # a list
+                    'id': dialogue_id,
+                    'system_transcript': turn['system_transcript'],
+                    'transcript': turn['transcript'],
+                    'turn_idx': turn['turn_idx'],
+                    'belief_state': turn['belief_state'],
+                    'turn_label': turn['turn_label'],
+                    'system_acts': turn['system_acts'],
+                    'domain': turn['domain'],
+                }, episode_done
 
 
 class DefaultTeacher(MultiWozDstTeacher):
