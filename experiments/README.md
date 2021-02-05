@@ -46,9 +46,9 @@ If plotted, the accuracies on the `test` set is as below:
 
 Some insights from the above result:
 
-1. The result on the `validation` and `test` set are similar
-2. The obtained `slot accuracy` is decent although not very good. The `joint goal accuracy` is very bad `<15%`. Need a significant improvement on `joint goal accuracy`. One way to start is by defining the ontology, using the `fixed` option and use better language model.
-3. Regarding the `batch_size`, there is an inclination that as the `batch_size` increases, the `slot accuracy` decreases, which makes sense because you now consider a lot more slot values, and the `joint goal accuracy` increases, which is quite strange for me. There's a possibility that I misimplement the `joint goal accuracy` metric so that such pattern occurs. I'll investigate this more.
+1. The result on the `validation` and `test` set are similar.
+2. The obtained `slot accuracy` is decent (`75%` for `batch_size=32`) although not very good. The `joint goal accuracy` is very bad, `<=25%` for all batch sizes. Need a significant improvement on `joint goal accuracy`. One way to start is by defining the ontology, using the `fixed` option and use better language model, e.g. `BERT`.
+3. Regarding the `batch_size`, there is an inclination that as the `batch_size` increases, the `slot accuracy` decreases, which makes sense because you now consider a lot more slot values, and the `joint goal accuracy` increases, which is quite strange for me. There's a possibility that I wrongly implement the `joint goal accuracy` metric so that such pattern occurs. I'll investigate this more.
 
 ### Error Analysis
 
