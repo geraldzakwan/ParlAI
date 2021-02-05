@@ -37,7 +37,7 @@ The results on the `test` set are as below:
 If plotted, the accuracies on the `test` set is as below:
 
 <p align="center">
- <img width="75%" src="batch_size_eff_on_test_acc_plot.png" />
+ <img width="50%" src="batch_size_eff_on_test_acc_plot.png" />
 </p>
 
 Some insights from the above result:
