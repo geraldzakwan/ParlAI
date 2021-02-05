@@ -36,7 +36,7 @@ The results on the `test` set are as below:
 3. For `batch_size=128`, `0.6512 slot accuracy` and `0.1512 joint goal accuracy` are obtained.
 4. For `batch_size=256`, `0.6088 slot accuracy` and `0.1602 joint goal accuracy` are obtained.
 5. For `batch_size=512`, `0.5476 slot accuracy` and `0.1962 joint goal accuracy` are obtained.
-6. For `batch_size=1024`, `0.4662 slot accuracy` and `0.2523 joint goal accuracy` are obtained.
+6. For `batch_size=1024`, `0.4582 slot accuracy` and `0.2523 joint goal accuracy` are obtained.
 
 If plotted, the accuracies on the `test` set is as below:
 
