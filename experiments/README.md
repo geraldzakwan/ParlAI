@@ -8,7 +8,7 @@ The conducted experiments are configured as below:
 - `MemNN`, one of ParlAI agents, is used as the model
 - The number of epochs is 100
 - `batch` is used as candidates source, meaning that when generating possible labels (and computing their probabilities), we only take into accounts the labels that exist within a certain training batch. Ideally, we don't do this, we want to consider all possible labels, i.e. using `fixed` option in ParlAI. But, it wasn't possible to do in my local machine because the computation is heavy. We need to list all possible slot values and define them for our `Teacher`. Certainly, using this `fixed` option, we will get a more accurate model. I need a server that I can use to conduct the experiment using the `fixed` option. Please refer here for documentation on candidates source: https://parl.ai/docs/tutorial_torch_ranker_agent.html.
-- `batch_size` is varied. I am using `32`, `64`, `128` and `256`. So, there are 4 models trained, hence there are 4 results as well.
+- `batch_size` is varied. I am using `batch_size` ranging from `8` to `1024`. So, there are 8 models trained, hence there are 8 results as well.
 
 The script used is as below:
 
@@ -30,8 +30,6 @@ The results on the `validation` set are as below:
 6. For `batch_size=256`, `0.6191 slot accuracy` and `0.1710 joint goal accuracy` are obtained.
 7. For `batch_size=512`, `0.5494 slot accuracy` and `0.1950 joint goal accuracy` are obtained.
 8. For `batch_size=1024`, `0.4662 slot accuracy` and `0.2420 joint goal accuracy` are obtained.
-9. For `batch_size=2048`, `0.3761 slot accuracy` and `0.3800 joint goal accuracy` are obtained.
-10. For `batch_size=4096`, `0.2727 slot accuracy` and `0.6030 joint goal accuracy` are obtained.
 
 The results on the `test` set are as below:
 
@@ -43,8 +41,6 @@ The results on the `test` set are as below:
 6. For `batch_size=256`, `0.6088 slot accuracy` and `0.1602 joint goal accuracy` are obtained.
 7. For `batch_size=512`, `0.5476 slot accuracy` and `0.1962 joint goal accuracy` are obtained.
 8. For `batch_size=1024`, `0.4582 slot accuracy` and `0.2523 joint goal accuracy` are obtained.
-99. For `batch_size=2048`, `0.3668 slot accuracy` and `0.3664 joint goal accuracy` are obtained.
-10. For `batch_size=4096`, `0.2554 slot accuracy` and `0.6116 joint goal accuracy` are obtained.
 
 If plotted, the accuracies on the `test` set is as below:
 
