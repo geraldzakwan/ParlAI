@@ -22,21 +22,29 @@ The `accuracy` metric is the default metric, which basically corresponds to `slo
 
 The results on the `validation` set are as below:
 
-1. For `batch_size=32`, `0.7457 slot accuracy` and `0.1430 joint goal accuracy` are obtained.
-2. For `batch_size=64`, `0.6996 slot accuracy` and `0.1340 joint goal accuracy` are obtained.
-3. For `batch_size=128`, `0.6570 slot accuracy` and `0.1480 joint goal accuracy` are obtained.
-4. For `batch_size=256`, `0.6191 slot accuracy` and `0.1710 joint goal accuracy` are obtained.
-5. For `batch_size=512`, `0.5494 slot accuracy` and `0.1950 joint goal accuracy` are obtained.
-6. For `batch_size=1024`, `0.4662 slot accuracy` and `0.2420 joint goal accuracy` are obtained.
+1. For `batch_size=8`, `0.8377 slot accuracy` and `0.2130 joint goal accuracy` are obtained.
+2. For `batch_size=16`, `0.7970 slot accuracy` and `0.1370 joint goal accuracy` are obtained.
+3. For `batch_size=32`, `0.7457 slot accuracy` and `0.1430 joint goal accuracy` are obtained.
+4. For `batch_size=64`, `0.6996 slot accuracy` and `0.1340 joint goal accuracy` are obtained.
+5. For `batch_size=128`, `0.6570 slot accuracy` and `0.1480 joint goal accuracy` are obtained.
+6. For `batch_size=256`, `0.6191 slot accuracy` and `0.1710 joint goal accuracy` are obtained.
+7. For `batch_size=512`, `0.5494 slot accuracy` and `0.1950 joint goal accuracy` are obtained.
+8. For `batch_size=1024`, `0.4662 slot accuracy` and `0.2420 joint goal accuracy` are obtained.
+9. For `batch_size=2048`, `0.3761 slot accuracy` and `0.3800 joint goal accuracy` are obtained.
+10. For `batch_size=4096`, `0.2727 slot accuracy` and `0.6030 joint goal accuracy` are obtained.
 
 The results on the `test` set are as below:
 
-1. For `batch_size=32`, `0.7379 slot accuracy` and `0.1371 joint goal accuracy` are obtained.
-2. For `batch_size=64`, `0.6878 slot accuracy` and `0.1431 joint goal accuracy` are obtained.
-3. For `batch_size=128`, `0.6512 slot accuracy` and `0.1512 joint goal accuracy` are obtained.
-4. For `batch_size=256`, `0.6088 slot accuracy` and `0.1602 joint goal accuracy` are obtained.
-5. For `batch_size=512`, `0.5476 slot accuracy` and `0.1962 joint goal accuracy` are obtained.
-6. For `batch_size=1024`, `0.4582 slot accuracy` and `0.2523 joint goal accuracy` are obtained.
+1. For `batch_size=8`, `0.8370 slot accuracy` and `0.1942 joint goal accuracy` are obtained.
+2. For `batch_size=16`, `0.8009 slot accuracy` and `0.1421 joint goal accuracy` are obtained.
+3. For `batch_size=32`, `0.7379 slot accuracy` and `0.1371 joint goal accuracy` are obtained.
+4. For `batch_size=64`, `0.6878 slot accuracy` and `0.1431 joint goal accuracy` are obtained.
+5. For `batch_size=128`, `0.6512 slot accuracy` and `0.1512 joint goal accuracy` are obtained.
+6. For `batch_size=256`, `0.6088 slot accuracy` and `0.1602 joint goal accuracy` are obtained.
+7. For `batch_size=512`, `0.5476 slot accuracy` and `0.1962 joint goal accuracy` are obtained.
+8. For `batch_size=1024`, `0.4582 slot accuracy` and `0.2523 joint goal accuracy` are obtained.
+99. For `batch_size=2048`, `0.3668 slot accuracy` and `0.3664 joint goal accuracy` are obtained.
+10. For `batch_size=4096`, `0.2554 slot accuracy` and `0.6116 joint goal accuracy` are obtained.
 
 If plotted, the accuracies on the `test` set is as below:
 
@@ -48,7 +56,7 @@ Some insights from the above result:
 
 1. The result on the `validation` and `test` set are similar.
 2. The obtained `slot accuracy` is decent (`75%` for `batch_size=32`) although not very good. The `joint goal accuracy` is very bad, `<=25%` for all batch sizes. Need a significant improvement on `joint goal accuracy`. One way to start is by defining the ontology, using the `fixed` option and use better language model, e.g. `BERT`.
-3. Regarding the `batch_size`, there is an inclination that as the `batch_size` increases, the `slot accuracy` decreases, which makes sense because you now consider a lot more slot values, and the `joint goal accuracy` increases, which is quite strange for me. There's a possibility that I wrongly implement the `joint goal accuracy` metric so that such pattern occurs. I'll investigate this more.
+3. Regarding the `batch_size`, there is an inclination that as the `batch_size` increases, the `slot accuracy` decreases, which makes sense because you now consider a lot more slot values, and the `joint goal accuracy` increases, which is strange. I suppose that my `joint goal accuracy` metric implementation is incorrect so that such pattern occurs, I'll take a look.
 
 ### Error Analysis
 
