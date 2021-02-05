@@ -8,7 +8,7 @@ The conducted experiments are configured as below:
 - `MemNN`, one of ParlAI agents, is used as the model
 - The number of epochs is 100
 - `batch` is used as candidates source, meaning that when generating possible labels (and computing their probabilities), we only take into accounts the labels that exist within a certain training batch. Ideally, we don't do this, we want to consider all possible labels, i.e. using `fixed` option in ParlAI. But, it wasn't possible to do in my local machine because the computation is heavy. We need to list all possible slot values and define them for our `Teacher`. Certainly, using this `fixed` option, we will get a more accurate model. I need a server that I can use to conduct the experiment using the `fixed` option. Please refer here for documentation on candidates source: https://parl.ai/docs/tutorial_torch_ranker_agent.html.
-- `batch_size` is varied. I am using `32`, `64`, `128`. So, there are 3 models trained, hence there are 3 results as well.
+- `batch_size` is varied. I am using `32`, `64`, `128` and `256`. So, there are 4 models trained, hence there are 4 results as well.
 
 The script used is as below:
 
@@ -25,12 +25,20 @@ The results on the `validation` set are as below:
 1. For `batch_size=32`, `0.7457 slot accuracy` and `0.1430 joint goal accuracy` are obtained.
 2. For `batch_size=64`, `0.6996 slot accuracy` and `0.1340 joint goal accuracy` are obtained.
 3. For `batch_size=128`, `0.6570 slot accuracy` and `0.1480 joint goal accuracy` are obtained.
+4. For `batch_size=256`, `0.6191 slot accuracy` and `0.1710 joint goal accuracy` are obtained.
 
 The results on the `test` set are as below:
 
 1. For `batch_size=32`, `0.7379 slot accuracy` and `0.1371 joint goal accuracy` are obtained.
 2. For `batch_size=64`, `0.6878 slot accuracy` and `0.1431 joint goal accuracy` are obtained.
 3. For `batch_size=128`, `0.6512 slot accuracy` and `0.1512 joint goal accuracy` are obtained.
+4. For `batch_size=256`, `0.6088 slot accuracy` and `0.1602 joint goal accuracy` are obtained.
+
+If plotted, the accuracies on the `test` set is as below:
+
+<p align="center">
+ <img width="75%" src="batch_size_eff_on_test_acc.png" />
+</p>
 
 Some insights from the above result:
 

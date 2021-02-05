@@ -10,7 +10,7 @@
     "multitask_weights": [
         1
     ],
-    "batchsize": 256,
+    "batchsize": 16,
     "dynamic_batching": null,
     "verbose": false,
     "datapath": "/Users/kartiko/iCloud Drive (Archive)/Desktop/workspace/columbia/Spring 2021/conv_ai/research/ParlAI/data",
@@ -135,7 +135,7 @@
     "override": {
         "task": "multiwoz_dst",
         "model_file": "/Users/kartiko/iCloud Drive (Archive)/Desktop/workspace/columbia/Spring 2021/conv_ai/research/ParlAI/models/multiwoz_dst/memnn",
-        "batchsize": 256,
+        "batchsize": 16,
         "num_epochs": 100.0,
         "model": "memnn",
         "candidates": "batch",
@@ -143,5 +143,5 @@
         "metrics": "accuracy,joint_goal_acc",
         "no_cuda": true
     },
-    "starttime": "Feb05_21-31"
+    "starttime": "Feb05_22-07"
 }
