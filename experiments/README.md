@@ -24,13 +24,13 @@ The results on the `validation` set are as below:
 
 1. For `batch_size=32`, `0.7457 slot accuracy` and `0.1430 joint goal accuracy` are obtained.
 2. For `batch_size=64`, `0.6996 slot accuracy` and `0.1340 joint goal accuracy` are obtained.
-3. For `batch_size=128`, `0.6509 slot accuracy` and `0.1480 joint goal accuracy` are obtained.
+3. For `batch_size=128`, `0.6570 slot accuracy` and `0.1480 joint goal accuracy` are obtained.
 
 The results on the `test` set are as below:
 
 1. For `batch_size=32`, `0.7379 slot accuracy` and `0.1371 joint goal accuracy` are obtained.
 2. For `batch_size=64`, `0.6878 slot accuracy` and `0.1431 joint goal accuracy` are obtained.
-3. For `batch_size=128`, `0.6471 slot accuracy` and `0.1512 joint goal accuracy` are obtained.
+3. For `batch_size=128`, `0.6512 slot accuracy` and `0.1512 joint goal accuracy` are obtained.
 
 Some insights from the above result:
 

@@ -1,0 +1,4 @@
+valid:
+    accuracy  ctpb  ctps  exps  exs    f1  hits@1  hits@10  hits@100  hits@5  joint_goal_acc  loss  lr  ltpb  ltps   mrr  rank  total_train_updates  tpb  tps
+       .6996 903.9  6451 453.6 7374 .7473   .6996    .9382         1   .8823           .1340 2.226   1 299.7  2138 .5301 8.008                88544 1204 8589
+
